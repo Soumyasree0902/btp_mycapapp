@@ -1,0 +1,18 @@
+###Get all Purchase Orders
+http://localhost:4004/odata/v4/CatalogService/POs
+ 
+###Get Single Purchase order
+http://localhost:4004/odata/v4/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC38052
+
+
+###Get the PO and PO Items data together - using $expand
+http://localhost:4004/odata/v4/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC38052?$expand=Items
+
+###Testing Action to boost order
+POST http://localhost:4004/odata/v4/CatalogService/POs('74867AD200E41EDBA5D8B0C98DC38052')/CatalogService.boost
+Content-Type: application/json
+ 
+{}
+ 
+###Test function to get largest order
+http://localhost:4004/odata/v4/CatalogService/largestOrder()
